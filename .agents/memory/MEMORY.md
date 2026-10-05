@@ -1,0 +1,1 @@
+- [Dash design direction](dash-design-direction.md) — Keep the site professional without making it complex for everyday customers.

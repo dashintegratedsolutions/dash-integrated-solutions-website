@@ -79,23 +79,27 @@ const faqs = [
 
 function Logo() {
   return <a href="#top" className="flex items-center gap-2.5" aria-label="Dash Integrated Solutions home">
-    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1764b5] text-white">
-      <span className="font-display text-[23px] font-extrabold leading-none">d</span>
+    <span className="brand-mark relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-[13px] text-white" aria-hidden="true">
+      <svg viewBox="0 0 40 40" className="absolute inset-0 h-full w-full" fill="none">
+        <path d="M0 0h40v40H0z" fill="#246c60" />
+        <path d="M12 11.5h8.6c5 0 8.4 3.4 8.4 8.5s-3.4 8.5-8.4 8.5H12V11.5Z" stroke="#fffaf0" strokeWidth="2.5" />
+        <path d="M17 20h13" stroke="#f0b078" strokeWidth="2.5" strokeLinecap="round" />
+      </svg>
     </span>
     <span className="flex flex-col leading-tight">
-      <span className="font-display text-[15px] font-extrabold tracking-[-.04em] text-[#1d2c3e]">dash<span className="text-[#1764b5]">.</span></span>
-      <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[.12em] text-[#758397]">Integrated Solutions</span>
+      <span className="font-display text-[15px] font-extrabold tracking-[-.045em] text-[#203b37]">dash<span className="text-[#b96840]">.</span></span>
+      <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[.12em] text-[#758477]">Integrated Solutions</span>
     </span>
   </a>;
 }
 
 function HeroVisual() {
   return <div className="relative mx-auto aspect-[1.12] w-full max-w-[540px]" aria-label="Illustration of local business growth dashboard" role="img">
-    <div className="absolute inset-[8%] rounded-[42%] bg-[#dcecf8]" />
-    <div className="absolute right-[5%] top-[8%] h-16 w-16 rounded-full border-[10px] border-[#a4d9d2]" />
-    <div className="absolute left-[8%] top-[16%] h-3 w-3 rounded-full bg-[#ecad65]" />
-    <div className="absolute bottom-[9%] left-[8%] h-2.5 w-2.5 rounded-full bg-[#1764b5]" />
-    <div className="absolute inset-x-[11%] top-[18%] rounded-[24px] border border-white/80 bg-white/95 p-4 shadow-[0_24px_65px_rgba(29,62,97,.17)] sm:p-5">
+    <div className="absolute inset-[8%] rounded-[42%] bg-[#e0e9d8]" />
+    <div className="absolute right-[5%] top-[8%] h-16 w-16 rounded-full border-[10px] border-[#a7c7b6]" />
+    <div className="absolute left-[8%] top-[16%] h-3 w-3 rounded-full bg-[#d9905d]" />
+    <div className="absolute bottom-[9%] left-[8%] h-2.5 w-2.5 rounded-full bg-[#246c60]" />
+    <div className="absolute inset-x-[11%] top-[18%] rounded-[24px] border border-[#f3f0e7] bg-[#fffefa] p-4 shadow-[0_24px_65px_rgba(35,66,56,.14)] sm:p-5">
       <div className="flex items-center justify-between border-b border-[#e9eef3] pb-3">
         <div>
           <p className="text-[10px] font-bold uppercase tracking-[.13em] text-[#8a99a8]">Local growth snapshot</p>
@@ -186,10 +190,10 @@ function App() {
           <div className="section-wrap grid min-h-[650px] items-center gap-4 py-14 md:grid-cols-[1.03fr_.97fr] md:py-16 lg:min-h-[704px]">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="relative z-10 max-w-[620px]">
               <motion.div variants={reveal} className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d4e5f3] bg-white/80 px-3.5 py-2 text-[11px] font-bold tracking-[.02em] text-[#356188]">
-                <span className="h-2 w-2 rounded-full bg-[#2da88f]" /> Digital growth for businesses in your city
+        <span className="h-2 w-2 rounded-full bg-[#c47a4b]" /> Digital growth for businesses in your city
               </motion.div>
               <motion.h1 variants={reveal} className="font-display text-[clamp(2.8rem,6.1vw,5.3rem)] font-extrabold leading-[1.02] tracking-[-.065em] text-[#1b2a3b]">
-                Get More Customers From <span className="text-[#1764b5]">Google, Social Media &amp; AI</span>
+                Get More Customers From <span className="text-[#1d6d61]">Google, Social Media &amp; AI</span>
               </motion.h1>
               <motion.p variants={reveal} className="mt-6 max-w-[540px] text-[16px] leading-[1.8] text-[#617186] md:text-[17px]">
                 We help local businesses improve their online presence, generate leads and automate customer engagement.
