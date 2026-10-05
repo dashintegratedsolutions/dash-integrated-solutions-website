@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Dash Integrated Solutions"
+description = "A mobile-first website for Dash Integrated Solutions, helping small and medium businesses improve local visibility, generate leads, and automate customer engagement with digital and AI services."
+version = "1.0.0"
+id = "artifacts/dash-integrated-solutions"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21763
+
+[services.development]
+run = "pnpm --filter @workspace/dash-integrated-solutions run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dash-integrated-solutions", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dash-integrated-solutions/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21763"
+BASE_PATH = "/"
