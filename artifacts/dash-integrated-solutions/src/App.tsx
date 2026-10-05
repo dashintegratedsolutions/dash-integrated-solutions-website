@@ -90,17 +90,13 @@ function Logo({ footer = false }: { footer?: boolean }) {
     </a>;
   }
 
-  return <a href="#top" className="flex items-center gap-2.5" aria-label={logoLabel}>
+  return <a href="#top" className="inline-flex items-center" aria-label={logoLabel}>
     <img
-      src={`${import.meta.env.BASE_URL}dash-logo-mark.png`}
+      src={`${import.meta.env.BASE_URL}dash-logo-lockup.png`}
       alt=""
       data-testid="img-dash-logo-header"
-      className="h-10 w-[52px] rounded-[13px] bg-[#141b2b] object-contain"
+      className="h-[68px] w-auto max-w-[132px] rounded-[10px]"
     />
-    <span className="flex flex-col leading-tight">
-      <span className="font-display text-[15px] font-extrabold tracking-[-.045em] text-[#203b37]">dash<span className="text-[#b96840]">.</span></span>
-      <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[.12em] text-[#758477]">Integrated Solutions</span>
-    </span>
   </a>;
 }
 
