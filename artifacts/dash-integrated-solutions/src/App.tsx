@@ -90,7 +90,11 @@ function Logo({ footer = false }: { footer?: boolean }) {
     </a>;
   }
 
-  return <a href="#top" className="inline-flex items-center" aria-label={logoLabel}>
+  return <a
+    href="#top"
+    className="-ml-[18px] flex h-[72px] w-[min(240px,calc(100vw-88px))] shrink-0 items-center bg-[#141b2b] pl-[18px] lg:-ml-[24px] lg:w-[176px] lg:pl-[24px] xl:w-[240px]"
+    aria-label={logoLabel}
+  >
     <img
       src={`${import.meta.env.BASE_URL}dash-logo-lockup.png`}
       alt=""
