@@ -77,15 +77,26 @@ const faqs = [
   { q: 'Are contracts required?', a: 'We will explain the scope and any agreed terms before work begins. Monthly packages are presented clearly, with no unexpected commitments.' },
 ];
 
-function Logo() {
-  return <a href="#top" className="flex items-center gap-2.5" aria-label="Dash Integrated Solutions home">
-    <span className="brand-mark relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-[13px] text-white" aria-hidden="true">
-      <svg viewBox="0 0 40 40" className="absolute inset-0 h-full w-full" fill="none">
-        <path d="M0 0h40v40H0z" fill="#246c60" />
-        <path d="M12 11.5h8.6c5 0 8.4 3.4 8.4 8.5s-3.4 8.5-8.4 8.5H12V11.5Z" stroke="#fffaf0" strokeWidth="2.5" />
-        <path d="M17 20h13" stroke="#f0b078" strokeWidth="2.5" strokeLinecap="round" />
-      </svg>
-    </span>
+function Logo({ footer = false }: { footer?: boolean }) {
+  const logoLabel = 'Dash Integrated Solutions home';
+  if (footer) {
+    return <a href="#top" className="inline-flex" aria-label={logoLabel}>
+      <img
+        src={`${import.meta.env.BASE_URL}dash-logo-lockup.png`}
+        alt=""
+        data-testid="img-dash-logo-footer"
+        className="h-auto w-[174px] rounded-[10px]"
+      />
+    </a>;
+  }
+
+  return <a href="#top" className="flex items-center gap-2.5" aria-label={logoLabel}>
+    <img
+      src={`${import.meta.env.BASE_URL}dash-logo-mark.png`}
+      alt=""
+      data-testid="img-dash-logo-header"
+      className="h-10 w-[52px] rounded-[13px] bg-[#141b2b] object-contain"
+    />
     <span className="flex flex-col leading-tight">
       <span className="font-display text-[15px] font-extrabold tracking-[-.045em] text-[#203b37]">dash<span className="text-[#b96840]">.</span></span>
       <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[.12em] text-[#758477]">Integrated Solutions</span>
@@ -386,7 +397,7 @@ function App() {
       <footer className="bg-[#172b40] pb-7 pt-11 text-white">
         <div className="section-wrap">
           <div className="grid gap-8 border-b border-white/15 pb-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_.7fr_.9fr]">
-            <div><div className="[&_*]:!text-white"><Logo /></div><p className="mt-4 max-w-[330px] text-[12px] leading-6 text-[#b3c1d0]">Helping Local Businesses Grow Through Digital &amp; AI Solutions</p></div>
+            <div><Logo footer /><p className="mt-4 max-w-[330px] text-[12px] leading-6 text-[#b3c1d0]">Helping Local Businesses Grow Through Digital &amp; AI Solutions</p></div>
             <div><p className="mb-3 text-[10px] font-bold uppercase tracking-[.16em] text-[#8fa9bf]">Explore</p><div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[12px] text-[#d1dce6]">{[['Home', '#top'], ['Services', '#services'], ['Packages', '#pricing'], ['Contact', '#contact']].map(([label, href]) => <a key={label} className="hover:text-white" href={href}>{label}</a>)}</div></div>
             <div><p className="mb-3 text-[10px] font-bold uppercase tracking-[.16em] text-[#8fa9bf]">Say hello</p><a className="text-[12px] font-semibold text-[#e0eaf3] hover:text-white" href={`mailto:${contactEmail}`}>{contactEmail}</a><a href={businessPhoneHref} className="mt-2 block text-[12px] text-[#b3c1d0]">{businessPhone}</a><div className="mt-4 flex items-center gap-2" aria-label="Social media profiles not configured"><span title="Instagram profile link not supplied" className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-[#e0eaf3]"><Instagram size={15} aria-hidden="true" /></span><span title="Facebook profile link not supplied" className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-[#e0eaf3]"><Facebook size={15} aria-hidden="true" /></span><span className="text-[10px] text-[#9db0c2]">Social profiles coming soon</span></div></div>
           </div>
